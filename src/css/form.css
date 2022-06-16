@@ -1,38 +1,51 @@
 .booking-form {
-    padding: 15px 10px;
-    width: 500px;
+    padding: 20px 15px;
+    border-radius: 5px;
+    width: 650px;
     overflow: auto;
+    margin: 15px auto;
 }
 .bookingTitle{
     border-radius: 5px;
     padding: 8px 5px;
-    margin: 8px 10px;
+    margin: 15px 10px;
     text-align:center ;
 }
-.form-group {
+.form-group{
+    line-height: 40px;
+}
+.form-group,.form-content {
     padding: 10px 15px ;
+    margin: 5px 0px;
     border-radius: 8px;
-    border: 5px solid #365a63;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    line-height: 40px;
+
+}
+.form-content{
+    width: 100%;
+}
+.form-content:hover{
+    color: #bdd4db;
 }
 button{
-    cursor: pointer;
-    padding: 8px 5px;
-    border: 5px solid #243c42;
+    padding: 10px 15px;
+    border: 3px solid #9cbfc9;
     border-radius: 8px;
+    font-weight: bold;
 }
+button:hover {
+    background-color: #bdd4db;
+    color: #243c42;
+border:3px solid #243c42;
+    cursor: pointer;
 
-button:hover{
-    background-color: #243c42;
-    color: #deeaed;
 }
-
 input{
     font-size: 15px;
-    border:5px solid #313531;
+
+    border:3px solid #636963;
     background-color: #deeaed;
     border-radius: 3px;
     padding: 5px 10px;
@@ -41,3 +54,19 @@ input{
 input[type="number"]{
    max-width: 50px;
 }
+
+@media only screen and (max-width: 600px) {
+    .booking-form {
+        padding: 10px 5px;
+        border-radius: 5px;
+        width: 350px;
+        overflow: auto;
+        margin: 5px auto;
+    }
+    .bookingTitle{
+        border-radius: 5px;
+        padding: 8px 5px;
+        margin: 10px 5px;
+        text-align:center ;
+    }
+  }

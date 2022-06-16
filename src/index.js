@@ -12,20 +12,21 @@
 **/
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Helmet from 'react-helmet';
+
 import App from './App';
-import ShowCalendar from './component/ShowCalendar'
-import CreateBooking from './component/CreateBooking';
-import QueryBooking from './component/QueryBooking';
 
 import './css/colorCode.css';
 import './css/layout.css';
 import './css/form.css';
-//<ShowCalendar/>
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <QueryBooking/>
-    <CreateBooking/>
-    <ShowCalendar/>
-  </React.StrictMode>
+  <>
+    <Helmet>
+        <title>mahjongjai</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    </Helmet>
+    <App/>
+  </>
 );

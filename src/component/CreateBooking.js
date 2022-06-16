@@ -17,12 +17,19 @@ import { async } from "@firebase/util";
  function CreateBooking() {
     
     const bookingCollectionRef=collection(db,"booking");
+    
+    const [login,setLogin]=useState(false);
     const [booking, setBooking]=useState([]);
     const [newNoPeople,setnewNoPeople]=useState(0);
     const [newHours,sethours]=useState(0);
     const [newPrice,setNewPrice]=useState(0);
     const [newDate,setNewDate]=useState(new Date());
     const [newstartTime,setStartTime]=useState("");
+    useEffect(()=>{
+        if(!login){
+            alert("asd");
+        }
+    },[])
     const addBooking =async()=>{
         const startTime=new Date(newDate);  
         const time = newstartTime.split(":");
@@ -47,13 +54,13 @@ import { async } from "@firebase/util";
         setStartTime('');
     }
   return (
-    <div className="booking-form primary-300">
-        <div className="primary-400 bookingTitle">
-                <h3 className="primary-900-text " > Make Booking</h3>
+    <div className="booking-form primary-400">
+        <div className="primary-300 bookingTitle">
+            <h3 className="primary-900-text " >BOOKING</h3>
         </div>
-        <div className="form-content primary-200-text">
-            <div className="form-group primary-600 ">
-                <label htmlFor="">
+        <div className="primary-200-text">
+            <div className="form-group  primary-600 ">
+                <label for="">
                     <h6>Booking Date</h6>
                 </label>
                 <div>
