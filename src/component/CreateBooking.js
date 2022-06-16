@@ -25,11 +25,7 @@ import { async } from "@firebase/util";
     const [newPrice,setNewPrice]=useState(0);
     const [newDate,setNewDate]=useState(new Date());
     const [newstartTime,setStartTime]=useState("");
-    useEffect(()=>{
-        if(!login){
-            alert("asd");
-        }
-    },[])
+    
     const addBooking =async()=>{
         const startTime=new Date(newDate);  
         const time = newstartTime.split(":");

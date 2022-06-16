@@ -34,3 +34,10 @@ button{font-size: 14px;}
     h5{font-size: 20px;margin: 0px;}
     h6{font-size: 16px;margin: 0px;}
   }
+  .icon{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    
+
+  }
