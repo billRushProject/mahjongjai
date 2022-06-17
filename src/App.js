@@ -14,29 +14,25 @@ import React,{useState, useEffect} from "react";
 
 
 
-import { HashRouter as Router, Route,Routes }from "react-router-dom";
+import { BrowserRouter as Router, Route,Routes }from "react-router-dom";
 import ShowCalendar from './component/ShowCalendar'
 import CreateBooking from './component/CreateBooking';
 import QueryBooking from './component/QueryBooking';
+import Login from './component/Login';
+/* */
 function App() {
-/*
-<Router>
-            <Routes>
-                <Route  path="/" element={<Home/>} />
-                <Route  path="/about" element={<AboutUs/>} />
-            </Routes>
-        </Router> */
   return (
+    
     <div >
-      <Router>
+    <Router>
         <Routes>
           <Route path="/" element={<QueryBooking/>}/>
+          <Route path="/login" element={<Login/>}/>
           <Route path="/admin/createBooking" element={<CreateBooking/>}/>
-
         </Routes>
-        
       </Router>
     </div>
+    
   );
 }
 

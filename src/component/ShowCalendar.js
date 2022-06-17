@@ -22,6 +22,8 @@ import { async } from "@firebase/util";
 export default function ShowCalendar() {
     const [events, setEvents] = useState([]);
     //const bookingCollectionRef = collection(db, "booking");
+    localStorage.setItem('login', false);
+    
     useEffect(()=>{
         const getBooking=async ()=>{
             const bookingCollectionRef = query(collection(db, "booking"),where("startDateTime", ">", new Date()));

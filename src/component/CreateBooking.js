@@ -13,19 +13,23 @@
 import React,{useState, useEffect} from "react";
 import db from '../firebase';
 import {  collection,  addDoc} from "firebase/firestore";
-import { async } from "@firebase/util";
+import  { useNavigate } from 'react-router-dom'
+
  function CreateBooking() {
-    
-    const bookingCollectionRef=collection(db,"booking");
-    
-    const [login,setLogin]=useState(false);
-    const [booking, setBooking]=useState([]);
+    let navigate = useNavigate();
+    const bookingCollectionRef=collection(db,"booking"); 
+    const [login,setLogin]=useState(JSON.parse(localStorage.getItem('login')) || false);
+
     const [newNoPeople,setnewNoPeople]=useState(0);
     const [newHours,sethours]=useState(0);
     const [newPrice,setNewPrice]=useState(0);
     const [newDate,setNewDate]=useState(new Date());
     const [newstartTime,setStartTime]=useState("");
-    
+    useEffect(()=>{
+        if (!login){
+            navigate('/');
+        }
+    },[])
     const addBooking =async()=>{
         const startTime=new Date(newDate);  
         const time = newstartTime.split(":");
@@ -48,6 +52,10 @@ import { async } from "@firebase/util";
         setNewPrice('');
         setNewDate('');
         setStartTime('');
+    }
+    const home=()=>{
+        localStorage.setItem('login',false);
+        navigate('/');
     }
   return (
     <div className="booking-form primary-400">
@@ -92,7 +100,7 @@ import { async } from "@firebase/util";
             
            
             <div className="form-group ">
-                    <button className="primary-500">Back</button>
+                    <button className="primary-500" onClick={home}>Back</button>
                     <button className="primary-600" 
                     onClick={() => {
                         const confirmBox = window.confirm("Confirm booking detail:\n"

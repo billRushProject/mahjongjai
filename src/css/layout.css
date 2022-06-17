@@ -3,7 +3,11 @@ body{
     background-color: #243c42;
     
 }
-container{
+.d-none{
+    /*display: none!important;
+*/
+}
+.container{
     display: flex;
     flex-direction: column;
     height:100vh ;
@@ -25,19 +29,41 @@ h6{font-size: 20px;margin: 0px;}
 .body2{font-size: 14px;}
 button{font-size: 14px;}
 .caption{font-size: 12px;}
+.nav{
+    
+}
+.nav, .navItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 
-@media only screen and (max-width: 600px) {
+}
+.icon{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin: 10px;
+
+  }
+.navSubItem{
+    background-color: #365a63;
+    padding: 10px 5px;
+    margin: auto 10px;
+    height: 20px;
+    
+}
+
+.navSubItem:hover{
+    background-color: white;
+    color:#365a63;
+    cursor: pointer;
+}
+
+  @media only screen and (max-width: 600px) {
     h1{font-size: 90px;margin: 0px;}
     h2{font-size: 54px;margin: 0px;}
     h3{font-size: 42px;margin: 0px;}
     h4{font-size: 30px;margin: 0px;}
     h5{font-size: 20px;margin: 0px;}
     h6{font-size: 16px;margin: 0px;}
-  }
-  .icon{
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    
-
   }
