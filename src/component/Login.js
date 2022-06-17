@@ -33,12 +33,12 @@ const signIn=()=>{
 }
   return (
     <> <div className="form primary-400">
-        <div  className="form-group primary-600 ">
+        <div  className="form-group primary-600 primary-900-text  ">
                 <h5>UserName</h5>
                 <input ></input>
                 
             </div>
-            <div  className="form-group primary-600 ">
+            <div  className="form-group primary-600 primary-900-text">
                 <h5>Password</h5>
                 <input type="password"  onChange={(event)=>setPassword(event.target.value)} required></input>
             </div>
