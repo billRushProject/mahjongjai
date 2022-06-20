@@ -23,7 +23,7 @@ const home=()=>{
 }
 const signIn=()=>{
     localStorage.setItem('login',false);
-    if(password=="123mmj"){
+    if(password=="mmj"){
         localStorage.setItem('login',true);
         navigate('/admin/createBooking');
     }else{
